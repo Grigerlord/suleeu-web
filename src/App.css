@@ -1,3 +1,4 @@
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -92,19 +93,91 @@ main {
   position: relative;
 }
 
-/*__________________NAV___________________*/
+
+
+
+
+
+
+
+/*?=========================NAV1================================*/
 
 nav {
-  width: 100%;
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
   position: fixed;
   /* background-image: linear-gradient(135deg, #ffffff00 0, #ffffff00 25%, #ffffff07 50%, #f0e6ea23 75%, #e4d3da23 100%); */
+} 
+
+
+nav .aplicar--header {
+  background-color: #faf4eb;
+  display: flex;
+  justify-content: space-between;
+  padding:8px 128px 8px 128px;
 }
+nav .aplicar--header div {
+  display: flex;
+  align-items: center;
+  color: #292929;
+}
+nav .aplicar--header div input {
+  background-color: #ffffff00;
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  width: 500px;
+  margin-left: 16px;
+  font-size: 12px;
+}
+nav .aplicar--header div input:hover {
+  cursor: pointer;
+  background-color: white;
+}
+nav .aplicar--header div input:focus {
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+
+
+nav .nav--header .redes--header {
+  display: flex;
+  justify-content: flex-end;
+}
+nav .nav--header .redes--header ul {
+  display: flex;
+  justify-content: flex-end;
+}
+nav .nav--header .redes--header ul li {
+  margin-right: 32px;
+  color: #292929;
+  transition: all .2s;
+}
+nav .nav--header .redes--header ul li.icoInstagram:hover {
+  color: #ff52c3;
+}
+nav .nav--header .redes--header ul li.icoFacebook:hover {
+  color: #3b5998;
+}
+nav .nav--header .redes--header ul li.icoTwitter:hover {
+  color: #00acee;
+}
+nav .nav--header .redes--header ul li.icoLinkedin:hover {
+  color: #0e76a8;
+}
+nav .nav--header .redes--header ul li.icoYoutube:hover {
+  color: #c4302b;
+}
+
+
+/*__________________________NAV2___________________________ */
+
 nav .box-menu--header li figure a img {
-  height: 80px;
+  height: 200px;
 }
 nav div {
   width: 100%;
@@ -112,10 +185,10 @@ nav div {
 
 nav .box-menu--header ul {
   display: flex;
-  padding: 8px;
+  padding: 16px;
   width: 100%;
   justify-content: space-evenly;
-  align-items: center;
+
 }	
 nav .box-menu--header ul li {
   padding: 8px;
@@ -123,9 +196,9 @@ nav .box-menu--header ul li {
 }
 
 nav .box-menu--header ul li a {
-  color: #ffffff;
-  font-size: 12PX;
-  transition: all .3s;
+  color: #faf4eb;
+  font-size: 16PX;
+  transition: all .2s;
 }
 nav .box-menu--header ul li a:hover {
   color: #a1a1a1;
@@ -135,7 +208,7 @@ nav .box-menu--header ul li a:hover {
 
 
 
-/*___________________________NAV________________________*/
+/*___________________________SECIONS________________________*/
 .s1 {
 	width: 100%;
 	height: 100vh;
@@ -150,20 +223,79 @@ nav .box-menu--header ul li a:hover {
 	align-items: center;
 	justify-content: center;
 	padding: 20px;
-	color: white;
+	color: #faf4eb;
   position: relative;
 }
+/* .form-principal--container header {
+  display: flex;
+  align-items: center;
+} */
 .form-principal--container header h1 {
 	margin-bottom: 20px;
-  font-size: 140px;
+  font-size: 120px;
+  text-shadow: #c7c7c7bf 0.1em 0.1em 0.2em;
   text-align: center;
 }
+/* .form-principal--container img {
+  width: 300px;
+} */
 .form-principal--container form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	height: 150px;
+}
+
+
+/**===========Aqui toy=====================*/
+.form-principal--container form label p {
+  font-size: 20px;
+  color: #faf4eb;
+  font-weight: 500;
+}
+.box-input--principal {
+  background-color: #faf4eb;
+  height: 50px;
+  width: 600px;
+  border-radius: 8px;
+  border-color: #ffcc4400;
+  display: flex;
+  align-items: center;
+  display: flex;;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: -8px 1px 27px 1px #cdcdcdbf;
+}
+.box-input--principal input {
+  background-color: #00acee00;
+  width: 80%;
+  color: #d69d00;
+  font-size: 20px;
+  padding: 8px;
+  border: none;
+}
+.box-input--principal input::placeholder {
+  color: #8f8f8f;
+}
+.box-input--principal input:focus {
+  border: none;
+  outline: none;
+}
+.box-input--principal button {
+  font-size: 16px;
+  font-weight: 500;
+  color: #272727;
+  border: none;
+  height: 100%;
+  background-image: url(../src/assets/images/dorado3.webp);
+  background-size: cover;
+  padding: 8px 20px 8px 20px;
+  transition: all .3s;
+}
+.box-input--principal button:hover {
+  color: #faf4eb;
+  box-shadow: -8px 1px 27px 1px #c7c7c7bf;
 }
 
 
@@ -178,7 +310,7 @@ nav .box-menu--header ul li a:hover {
 }
 .s3 {
 	background-color: black;
-	color: white;
+	color: #fdfff0;
 	width: 100%;
 	height: 100vh;
 }

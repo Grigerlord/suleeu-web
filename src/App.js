@@ -3,6 +3,13 @@ import './App.css';
 import video from './assets/videos/360p.mp4'
 import logo from './assets/images/logoStrans.png'
 import logoWords from './assets/images/logoWords.png'
+import {
+  FaClipboardCheck,
+  FaInstagramSquare,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube } from 'react-icons/fa';
 
 function App() {
   return (
@@ -93,20 +100,23 @@ function App() {
           <div className='nav--header'>
 
 
-            <div className='aplicar-header'>
+            <div className='aplicar--header'>
               <div>
-                <label>
-                  <span>Log</span>
+                <label for='email'>
+                  <span>
+                    <FaClipboardCheck />
+                  </span>
                 </label>
-                <input type="email" />
+                <input id='email' type="email" placeholder='Ingresa tu Email para APLICAR' />
               </div>
 
               <div className='redes--header'>
                 <ul>
-                  <li>Inst</li>
-                  <li>Facb</li>
-                  <li>Twtt</li>
-                  <li>Link</li>
+                  <li className='icoInstagram'> <FaInstagramSquare className='gradient' /> </li>
+                  <li className='icoFacebook' > <FaFacebook /> </li>
+                  <li className='icoTwitter'> <FaTwitter /> </li>
+                  <li className='icoLinkedin'> <FaLinkedin /> </li>
+                  <li className='icoYoutube'> <FaYoutube /> </li>
                 </ul>
               </div>
             </div>
@@ -119,7 +129,7 @@ function App() {
                 <li><a href="">GALERÍA</a></li>
                 <li>
                   <figure>
-                    <a href="#"><img src={logoWords} alt="Logo soy un latino exitoso en USA" /></a>
+                    <a href="#"><img src={logo} alt="Logo soy un latino exitoso en USA" /></a>
                   </figure>
                 </li>
                 <li><a href="">REGALOS</a></li>
@@ -136,17 +146,21 @@ function App() {
         <section class="s1">
 
           
-
           <div class="form-principal--container">
-            <header> <h1> SOY UN LATINO EXITOSO EN USA </h1> </header>
+            <header>
+              <h1>SOY UN LATINO <br/> EXITOSO EN USA</h1>
+            </header>
             <form>
-              <label for="inputEmail-principal">Ingresa tu @email si deseas formar parte de esta compañía</label>
-              <div>
-                <input type="email" placeholder="soyunlatino@exitoso.usa" id="inputEmail-principal" />
-              </div>
-              <button type="button">Aplicar</button>
+              <label for="inputEmail-principal">
+                <p>Ingresa tu @email si deseas formar parte de esta compañía</p> 
+              </label>
+                <div class="box-input--principal">
+                  <input type="email" placeholder="soyunlatino@exitoso.usa" id="inputEmail-principal" />
+                  <button type="button">APLICAR</button>
+                </div>
             </form>
-          </div>
+        </div>
+
 
         </section>
 

@@ -1,3 +1,4 @@
+import { React, useEffect } from 'react'
 import './App.css';
 // import ReactPlayer from 'react-player'
 import video from './assets/videos/360p.mp4'
@@ -12,83 +13,53 @@ import {
   FaYoutube } from 'react-icons/fa';
 
 function App() {
+
+  useEffect(() => {
+    
+    const logoP = document.querySelector('#imgPrincipal')
+    const s2 = document.querySelector('.s2')
+    const boxMenuHeader = document.querySelector('.box-menu--header')
+    const ListMenuHeader = document.querySelector('#listMenuHeader')
+
+
+    document.addEventListener('scroll', () => {
+      let scroll = window.scrollY
+      if(scroll === 0){
+        boxMenuHeader.style.backgroundColor = '#ffffff00'
+        logoP.style.width = '200px'
+        logoP.style.height = '200px'
+        ListMenuHeader.style.alignItems = 'flex-start'
+      }else {
+        boxMenuHeader.style.backgroundColor = '#00000065'
+        logoP.style.width = '50px'
+        logoP.style.height = '50px'
+        ListMenuHeader.style.alignItems = 'center'
+      }
+    })
+
+    //INTERSECTION OBSERVER
+    // const cambiarLogoSize = (entradas, observador) => {
+    //   entradas.forEach((entrada) => {
+    //     if(entrada.isIntersecting){
+    //       logoP.style.width = '80px'
+    //       logoP.style.height = '80px'
+    //       boxMenuHeader.style.backgroundColor = '#ffffff'
+    //     }
+    //   })
+    // }
+    // const observadorLogo = new IntersectionObserver(cambiarLogoSize, {
+    //   root: null,
+    //   rootMargin: '0px 0px 5px 0px',
+    //   threshold: 0.1,
+    // })
+    // observadorLogo.observe(s2)
+
+  }, [])
+  
+
+
   return (
-    // <div id='principal-container' className='principal-container'>
-    //   <div className='videoContain'>
-
-    //     <ReactPlayer
-    //       url={video}
-    //       playing
-    //       loop
-    //       muted
-    //       width='100%'
-    //       height='100%'
-    //       playbackRate={0.4}
-    //     />
-    //   </div>
-
-
-    //   <main>
-
-    //     {/* <div className='effect-blur'></div> */}
-
-
-    //     <nav>
-    //       <div className='logo-principal'>
-    //         <img src={logo} alt="Logo Soy un latino exitoso en USA" />
-    //       </div>
-    //         <ul>
-    //           <li key='nav--quienes-somos'>Quiénes somos</li>
-    //           <li key='nav--testimonios'>Testimonios</li>
-    //           <li key='nav--galeria'>Galería</li>
-    //           <li key='nav--contacto'>Contacto</li>
-    //         </ul>
-    //     </nav>
-
-
-
-    //     <section>
-    //       <header>
-    //         <h1>Soy un latino exitoso en USA</h1>
-    //         <p>Aplica aquí para que veas que es lo bueno</p>
-    //         <form>
-    //           <input type="text" />
-    //           <button type='button'>Aplicar</button>
-    //         </form>
-    //         <div className='opcions'>
-    //           <ul>
-    //             <li key='form--option1'>Opción 1</li>
-    //             <li key='form--option2'>Opción 2</li>
-    //           </ul>
-    //         </div>
-    //       </header>
-    //     </section>
-
-
-    //     <footer>
-    //       <div>Redes</div>
-    //       <div>Dirección</div>
-    //       <div>Desarrollo</div>
-    //       <div>Logo</div>
-    //     </footer>
-    //   </main>
-     
-
-    // </div>
     <>
-      {/* <video src="./assets/videos/360p.mp4" autoplay loop muted></video> */}
-      
-      {/* <div className='video-fondo'>
-        <ReactPlayer
-          url={video}
-          playing
-          loop
-          muted
-          width='100%'
-          height='100%'
-          playbackRate={0.1}
-        />
-      </div> */}
 
       <video preload='' autoPlay muted loop src={video} className='video-fondo'>
       </video>
@@ -102,7 +73,7 @@ function App() {
 
             <div className='aplicar--header'>
               <div>
-                <label for='email'>
+                <label htmlFor='email'>
                   <span>
                     <FaClipboardCheck />
                   </span>
@@ -123,13 +94,13 @@ function App() {
 
 
             <div className='box-menu--header'>
-              <ul>
+              <ul id='listMenuHeader'>
                 <li><a href="">NOSOTROS</a></li>
                 <li><a href="">VACANTES</a></li>
                 <li><a href="">GALERÍA</a></li>
                 <li>
                   <figure>
-                    <a href="#"><img src={logo} alt="Logo soy un latino exitoso en USA" /></a>
+                    <a href="#"><img id="imgPrincipal" src={logo} alt="Logo soy un latino exitoso en USA" /></a>
                   </figure>
                 </li>
                 <li><a href="">REGALOS</a></li>
@@ -143,18 +114,18 @@ function App() {
         </nav>
 
 
-        <section class="s1">
+        <section className="s1">
 
           
-          <div class="form-principal--container">
+          <div className="form-principal--container">
             <header>
               <h1>SOY UN LATINO <br/> EXITOSO EN USA</h1>
             </header>
             <form>
-              <label for="inputEmail-principal">
-                <p>Ingresa tu @email si deseas formar parte de esta compañía</p> 
+              <label htmlFor="inputEmail-principal">
+                <p>Ingresa tu @email si deseas hacer parte de nuestra compañía</p>
               </label>
-                <div class="box-input--principal">
+                <div className="box-input--principal">
                   <input type="email" placeholder="soyunlatino@exitoso.usa" id="inputEmail-principal" />
                   <button type="button">APLICAR</button>
                 </div>
@@ -164,10 +135,8 @@ function App() {
 
         </section>
 
-
-
-        <section class="s2">section 2</section>
-        <section class="s3">section 3</section>
+        <section className="s2">section 2</section>
+        <section className="s3">section 3</section>
         <footer>
         <div>Redes</div>
            <div>Dirección</div>
